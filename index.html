@@ -278,8 +278,8 @@ footer a{display:block;padding:3px 0;opacity:.9;transition:opacity .2s,transform
 <div class="cta"><a class="btn" href="https://www.behance.net/gurunarshima" target="_blank" rel="noopener"><svg class="ic f"><use href="#i-be"/></svg>See my Behance work</a><a class="btn o" href="https://drive.google.com/drive/folders/1bjinnE8N2tnVYhzngi_IP73ryw7fA0Sc?usp=drive_link" target="_blank" rel="noopener"><svg class="ic"><use href="#i-dl"/></svg>Download my CV</a></div></div></div>
 <div class="stats">
 <div class="stat rv"><strong data-n="3" data-s="+">0</strong><span>Years of experience</span></div>
-<div class="stat rv" style="--d:.1s"><strong data-n="10" data-s="+">0</strong><span>Projects completed</span></div>
-<div class="stat rv" style="--d:.2s"><strong data-n="5">0</strong><span>Companies worked with</span></div></div>
+<div class="stat rv" style="--d:.1s"><strong data-n="20" data-s="+">0</strong><span>Projects completed</span></div>
+<div class="stat rv" style="--d:.2s"><strong data-n="2">0</strong><span>Companies worked with</span></div></div>
 </div></section>
 
 <section id="skills" style="padding-top:0"><div class="wrap">
@@ -378,11 +378,12 @@ document.querySelectorAll('.pj .im').forEach(el=>{el.addEventListener('pointermo
 document.querySelectorAll('.btn').forEach(b=>{b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.22}px,${(e.clientY-r.top-r.height/2)*.32}px)`});b.addEventListener('pointerleave',()=>b.style.transform='')});
 document.querySelectorAll('h2.rv').forEach(h=>{let i=0;h.innerHTML=h.textContent.trim().split(/\s+/).map(w=>`<span class="wd"><span style="--i:${i++}">${w.replace(/&/g,'&amp;')}</span></span>`).join(' ')});
 // experience
-const X=[['Next XR','UI/UX Designer','May 2025 – Mar 2026',['Designed AR/VR experiences and 3D user flows for medical, engineering, and e-learning platforms.','Built game interfaces and digital products for crypto, e-commerce, and e-learning.','Led branding and product design including logo and visual identity systems.'],['AR/VR','Figma','Game UI','Branding']],
+const X=[
+['Next XR','UI/UX Designer','May 2025 – Mar 2026',['Designed AR/VR experiences and 3D user flows for medical, engineering, and e-learning platforms.','Built game interfaces and digital products for crypto, e-commerce, and e-learning.','Led branding and product design including logo and visual identity systems.'],['AR/VR','Figma','Game UI','Branding']],
 ['AMCI Edtech Pvt. Ltd','UI/UX Designer','Jun 2024 – Mar 2025',['Designed intuitive interfaces for an educational platform, improving engagement and accessibility.','Worked with developers to refine UI components for seamless integration.','Ran usability tests and iterated designs based on user feedback.'],['EdTech','Figma','Usability Testing']],
 ['VEGROW — Chifu Agritech','UI/UX Designer','Feb 2024 – Jun 2024',['Designed and optimized interfaces for web and mobile agritech applications.','Created wireframes and interactive prototypes in Figma and Adobe XD.','Conducted user research and improved UI based on stakeholder feedback.'],['Agritech','Adobe XD','Mobile']],
 ['RAWE — CRIDA','Intern','Jun 2023 – Sep 2023',['Researched farmers\' tech adoption and trained them on government agri apps.','Worked with agri-tech solutions: Agri App, Farm Guide, Agrostar, Plantix.'],['Research','Agritech']],
-['Agribot Pvt. Ltd.','Design Intern','Dec 2022 – Feb 2023',['Designed VR/AR-based field mapping and crop monitoring solutions.','Used Canva and 3D modeling tools for visual deliverables.'],['VR/AR','3D Modeling','Canva']]];
+['Agribot Pvt. Ltd.','Intern','Dec 2022 – Feb 2023',['Designed VR/AR-based field mapping and crop monitoring solutions.','Used Canva and 3D modeling tools for visual deliverables.'],['VR/AR','3D Modeling','Canva']]];
 $('#ex').innerHTML=X.map(([c,r,d,b,t],i)=>`<div class="row rv${i?'':' o'}"><button aria-expanded="${!i}"><span>${c}</span><small>${r}</small><small>${d}</small><i class="pl"></i></button><div class="pn"><div><ul>${b.map(x=>`<li>${x}</li>`).join('')}</ul><div class="tags">${t.map(x=>`<span class="tg">${x}</span>`).join('')}</div></div></div></div>`).join('');
 $('#ex').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const r=b.parentElement,o=!r.classList.contains('o');document.querySelectorAll('.row').forEach(x=>{x.classList.remove('o');x.firstChild.setAttribute('aria-expanded',false)});if(o){r.classList.add('o');b.setAttribute('aria-expanded',true)}});
 // contact form -> mailto
